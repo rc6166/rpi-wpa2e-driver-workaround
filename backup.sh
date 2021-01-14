@@ -23,9 +23,9 @@ echo 'New wpa configuration at ' $NEW_WPA_CONF ' copied to default directory'
 # Replace all occurences of the default nl80211 driver with wext driver
 for i in "${REPLACE_ARRAY[@]}"
 do
-	sudo sed -i -e 's/nl80211/blah/g' $i
-	sudo sed -i -e 's/wext/nl80211/g' $i
-	sudo sed -i -e 's/blah/wext/g' $i
+	sudo sed -i 's/nl80211/blah/g' $i
+	sudo sed -i 's/wext/nl80211/g' $i
+	sudo sed -i 's/blah/wext/g' $i
 	echo 'Set new default driver in ' $i
 done
 
